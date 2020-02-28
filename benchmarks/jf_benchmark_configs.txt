@@ -1,0 +1,6 @@
+1. 1 NUMA NODE    : numactl -N 0 <jf cmd>
+	only 10 threads,
+
+2. run on all cpus :   just <jf cmd>
+ 	20 threads
+	turn on HT

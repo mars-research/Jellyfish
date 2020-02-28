@@ -1,0 +1,2 @@
+#!/bin/bash
+/local/devel/jellyfish-2.3.0/bin/jellyfish histo -h -o histogram.jf $1 

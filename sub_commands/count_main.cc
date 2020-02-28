@@ -47,6 +47,7 @@
 #include <jellyfish/mer_dna_bloom_counter.hpp>
 #include <jellyfish/generator_manager.hpp>
 #include <sub_commands/count_main_cmdline.hpp>
+#include "libfipc_test_time.h"
 
 static count_main_cmdline args; // Command line switches and arguments
 
@@ -151,15 +152,23 @@ public:
 
   virtual void start(int thid) {
     size_t count = 0;
+    int kmer_count = 0;
     MerIteratorType mers(parser_, args.canonical_flag);
+    uint64_t start, end, totcycles;
 
     switch(op_) {
      case COUNT:
+      start = RDTSC_START();
       for( ; mers; ++mers) {
         if((*filter_)(*mers))
           ary_.add(*mers, 1);
+	  kmer_count++;
         ++count;
       }
+      end = RDTSCP();
+      totcycles = (end-start);
+      printf("totcycles %lu\n", totcycles);
+      printf("count %d\n", kmer_count);
       break;
 
     case PRIME:

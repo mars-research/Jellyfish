@@ -1,0 +1,1 @@
+/local/devel/Jellyfish/bin/jellyfish count -m 22 -o output.jf -s 1000000000 --timing=timings.time -t 20 /local/devel/Jellyfish/sequences/GCF_000146605.3_Turkey_5.1_genomic.fna
