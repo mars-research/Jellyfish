@@ -21,5 +21,7 @@ for c in counts:
 	print(c)
 '''
 
+i = 1
 for cycle, count in zip(cycles,counts):
-	print(cycle, ",", count)
+	print(i, ",", cycle, ",", count)
+	i += 1
