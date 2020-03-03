@@ -6,5 +6,5 @@ conf1:
 conf2:
 	run on all cpus
 	<jf cmd>
-	20 threads
+	40 threads
 	Hyperthreading is on 

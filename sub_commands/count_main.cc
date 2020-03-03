@@ -160,9 +160,10 @@ public:
      case COUNT:
       start = RDTSC_START();
       for( ; mers; ++mers) {
-        if((*filter_)(*mers))
+        if((*filter_)(*mers)){
           ary_.add(*mers, 1);
 	  kmer_count++;
+	}
         ++count;
       }
       end = RDTSCP();
