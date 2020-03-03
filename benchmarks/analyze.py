@@ -14,7 +14,12 @@ for line in f:
 		totcount += int(data[1])
 		counts.append(int(data[1]))
 
+'''
 for c in cycles:
 	print(c)
 for c in counts:
 	print(c)
+'''
+
+for cycle, count in zip(cycles,counts):
+	print(cycle, ",", count)
